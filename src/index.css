@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dashboard-banner-gradient {
+    background-image: linear-gradient(178.5deg, #0c3b2e 70%, #21a17e);
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .inner {
+    @apply mx-auto w-full max-w-screen-xl;
+  }
+
+  .btn {
+    @apply flex w-fit cursor-pointer flex-row items-center justify-center gap-3 rounded-lg px-3 py-2 text-center font-inter text-base font-medium disabled:opacity-40 lg:px-4 lg:py-3 lg:text-lg;
+  }
+
+  .btn--large {
+    @apply w-full;
+  }
+
+  .btn-pry {
+    @apply bg-sec-500 text-pry-900 hover:bg-sec-400 focus:bg-sec-400 active:bg-sec-600;
+  }
+
+  .btn-pry--outline {
+    @apply border border-sec-500 bg-transparent text-white hover:border-sec-400 focus:border-sec-400 active:border-sec-600;
+  }
+
+  .btn-sec {
+    @apply bg-pry-500 text-white hover:bg-pry-400 focus:bg-pry-400 active:bg-pry-600;
+  }
+
+  .btn-sec--outline {
+    @apply border border-pry-500 bg-transparent text-pry-900 hover:border-pry-400 focus:border-pry-400 active:border-pry-600;
+  }
+
+  .btn-error {
+    @apply bg-error-500 text-white hover:bg-error-400 focus:bg-error-400 active:bg-error-600;
+  }
+
+  .text-btn {
+    @apply font-inter text-lg font-normal disabled:opacity-40;
+  }
+
+  .text-btn--underline {
+    @apply underline;
+  }
+
+  .text-btn-pry {
+    @apply text-sec-500 hover:text-sec-400 focus:text-sec-400 active:text-sec-600;
+  }
+
+  .text-btn-sec {
+    @apply text-pry-500 hover:text-pry-400 focus:text-pry-400 active:text-pry-600;
+  }
+}
+
+@layer utilities {
+  .toast-container {
+    @apply fixed top-[105px] mx-5 max-w-screen-xl lg:top-[114px] lg:mx-6 xl:mx-auto !important;
+  }
+}
