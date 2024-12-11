@@ -54,9 +54,30 @@ const ProjectCard = () => {
       // Fetch project details using the endpoint you mentioned
       const response = await axios.get(`${API}/api/Alte/freelancer/project-card/${projectId}`);
       
+      const createUrlFriendlyTitle = (title) => {
+        // Remove special characters and replace multiple spaces
+        const cleanedTitle = title
+          .replace(/[^\w\s-]/g, '') // Remove special characters
+          .replace(/\s+/g, ' ') // Replace multiple spaces with single space
+          .trim();
+        
+        // Convert to lowercase and replace spaces with hyphens
+        const urlFriendlyTitle = cleanedTitle
+          .toLowerCase()
+          .replace(/\s+/g, '-');
+        
+        return urlFriendlyTitle;
+      };
+  
+      const urlTitle = createUrlFriendlyTitle(response.data.title);
+      
+
       // Navigate to project details page with project data
-      navigate(`/freelancer/dashboard/projects/project-details/${projectId}`, { 
-        state: { projectDetails: response.data } 
+      navigate(`/freelancer/dashboard/projects/project-details/${urlTitle}`, { 
+        state: { 
+          projectDetails: response.data, 
+          projectId: projectId
+        } 
       });
     } catch (err) {
       console.error("Failed to fetch project details:", err);

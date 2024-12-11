@@ -19,7 +19,7 @@ const ProjectCardDetails = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setModalComponent } = useModalContext();
   const location = useLocation();
-  const { projectDetails } = location.state || {};
+  const { projectDetails, projectId } = location.state || {};
 
   useEffect(() => {
     setIsModalOpen(true);
