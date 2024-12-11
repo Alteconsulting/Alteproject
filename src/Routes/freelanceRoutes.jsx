@@ -61,7 +61,7 @@ const freelancerRoutes = {
           element: <EditProfile />,
         },
         {
-          path: "projects/project-details",
+          path: "projects/project-details/:id",
           element: <ProjectCardDetails />,
         },
         {

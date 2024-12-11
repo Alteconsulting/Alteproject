@@ -128,7 +128,7 @@ const ResumeForm = () => {
       const formData = new FormData();
       formData.append("Resume", data.resume);
 
-      const { status } = await axios.post(`${API}/resume`, formData);
+      const { status } = await axios.post(`${API}/api/Alte/resume`, formData);
 
       if (status === 200) {
         reset();
